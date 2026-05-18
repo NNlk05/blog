@@ -4,3 +4,8 @@ baseurl: "/blog"
 title: "NNlk05's Venting Hole"
 description: "Otherwise known as my personal blog."
 author: "NNlk05"
+
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
