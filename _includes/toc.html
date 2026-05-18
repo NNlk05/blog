@@ -1,0 +1,16 @@
+<ul id="markdown-toc" style="list-style: none; padding: 0; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+  {% assign heading_nodes = include.html | split: '</h2' %}
+  {% for node in heading_nodes %}
+    {% if node contains '<h2' %}
+      {% assign chunk = node | split: '<h2' | last %}
+      
+      {% assign header_id = chunk | split: 'id=' | last | split: '>' | first | replace: '"', '' | replace: '\', '' | replace: "'", '' | strip %}
+      {% assign header_text = chunk | split: '>' | last | strip_html | strip %}
+      
+      <li style="margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; text-align: center; width: 100%;">
+        <span style="color: #94cdff; margin-right: 8px;">•</span>
+        <a href="#{{ header_id }}" style="font-weight: 500;">{{ header_text }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

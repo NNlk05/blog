@@ -82,18 +82,19 @@
         V
       </button>
     </header>
-    <main>
-      <span
-        class="scroll-to-here"
-        style="
-          display: block;
-          position: relative;
-          top: -100px;
-          visibility: hidden;
-        "
-      ></span>
+<main class="container">
+  <h1>{{ page.title }}</h1>
+  
+  {% if content contains '<h2' or content contains '<h3' %}
+    <div class="toc-wrapper" style="text-align: left; margin-bottom: 2rem;">
+      <h3 style="text-align: center;">In this article:</h3>
+      {% include toc.html html=content %}
+    </div>
+  {% endif %}
 
-      <div class="container">{{ content }}</div>
-    </main>
+  <div class="entry-content">
+    {{ content }}
+  </div>
+</main>
   </body>
 </html>

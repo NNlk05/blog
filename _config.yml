@@ -8,3 +8,10 @@ author: "NNlk05"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  toc_levels: 1..6
+  auto_ids: true
+  extensions: [theme_implicit_ids, footnotes]

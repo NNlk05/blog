@@ -1,0 +1,123 @@
+---
+layout: default
+title: Browse by Topic
+---
+
+<div style="text-align: center; width: 100%; margin-bottom: 1.5rem">
+  <h2
+    id="active-topic-title"
+    style="
+      display: inline-block;
+      color: #94cdff;
+      margin: 0 auto;
+      text-align: center;
+    "
+  >
+    All Topics
+  </h2>
+</div>
+
+<div
+  id="topics-container"
+  style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  "
+>
+  {% for tag in site.tags %}
+  <div
+    id="target-{{ tag[0] | slugify }}"
+    class="topic-group"
+    style="display: none; width: 100%"
+  >
+    <ul
+      style="
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        text-align: left;
+      "
+    >
+      {% for post in tag[1] %}
+      <li
+        style="
+          margin-bottom: 0.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+        "
+      >
+        <span style="color: #94cdff; margin-right: 15px; font-family: monospace"
+          >{{ post.date | date: "%Y-%m-%d" }}</span
+        >
+        <a href="{{ post.url | relative_url }}" style="font-weight: bold"
+          >{{ post.title }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+
+<div id="topic-fallback" style="text-align: left">
+  <p>Select a topic to filter posts:</p>
+  <div class="icons">
+    {% assign sorted_tags = site.tags | sort %} {% for tag in sorted_tags %}
+    <a
+      href="#{{ tag[0] | slugify }}"
+      class="margin-fix"
+      style="
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin-right: 8px;
+        display: inline-block;
+        font-family: monospace;
+      "
+    >
+      🏷️ {{ tag[0] }}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  function renderActiveTopic() {
+    const hash = window.location.hash.toLowerCase().replace("#", "");
+    const groups = document.querySelectorAll(".topic-group");
+    const fallback = document.getElementById("topic-fallback");
+    const titleElement = document.getElementById("active-topic-title");
+
+    let found = false;
+
+    if (hash) {
+      groups.forEach((group) => {
+        if (group.id === "target-" + hash) {
+          group.style.display = "block";
+          // Clean up the hash string for display in the header
+          titleElement.textContent = "Topic: #" + hash.replace(/-/g, " ");
+          found = true;
+        } else {
+          group.style.display = "none";
+        }
+      });
+    }
+
+    if (found) {
+      fallback.style.display = "none";
+    } else {
+      groups.forEach((group) => (group.style.display = "none"));
+      titleElement.textContent = "Browse by Topic";
+      fallback.style.display = "block";
+    }
+  }
+
+  // Listen for hash modifications and initial asset load execution
+  window.addEventListener("hashchange", renderActiveTopic);
+  window.addEventListener("DOMContentLoaded", renderActiveTopic);
+</script>
