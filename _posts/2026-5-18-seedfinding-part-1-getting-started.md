@@ -26,7 +26,7 @@ TL;DR: You can't. You just can't. Don't even think about trying.
 
 The sheer number of seeds in Minecraft demonstrates that we _need_ tools for seedfinding. The main tool I use is called _[Cubiomes Viewer](https://github.com/cubitect/cubiomes-viewer)_. It is very versatile, easy to use, and is fast enough for most requirements.
 
-Pro tip: don't listen to the people saying you must know how to code to do seedfinding. You do need code to do things faster or search for seeds that Cubiomes Viewer can't find. I have never needed to code in my seedfinding career (unless I steal other's code [thank you, estadying]).
+Pro tip: don't listen to the people saying you must know how to code to do seedfinding. You do need code to do things faster or search for seeds that Cubiomes Viewer can't find. I have never needed to code in my seedfinding career (unless I steal other's code [thank you, estradying]).
 
 > !! WARNING !!: DO NOT TRUST CUBIOMES.COM!!! IT IS A VIBECODED, COOKIE CUTTER, GARBAGE QUALITY, SCAMSITE, WITH SEO STUFFING!!!! I WILL NOT BE SURPRISED IF THE AUTHOR CHANGE THE DOWNLOAD LINK TO MALWARE!!!! D-O-N-T-U-S-E-I-T!!!!!!
 
