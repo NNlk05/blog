@@ -48,6 +48,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-admin
 
 markdown: kramdown
 kramdown:
