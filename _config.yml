@@ -41,7 +41,7 @@ title: "Cells, seeds, bytes, and everything in between"
 description: ""
 author: "NNlk05"
 
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "neon"
 
 plugins:
