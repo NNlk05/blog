@@ -1,3 +1,4 @@
+
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -51,7 +52,8 @@ github:
     username: "NNlk05"
 
 social:
-    name: "NNlk05"
+    github:
+        name: "NNlk05"
 
 webmaster_verifications:
     google: "--dhKNDxlhaOMOR1buWLQnWNTOosb9BAUEZi_HXgSt4"
@@ -62,6 +64,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-admin
   - jekyll-default-layout
+
+license:
+    name: "CC BY-NC 4.0"
+    link: https://creativecommons.org/licenses/by-nc/4.0/
 
 markdown: kramdown
 kramdown:
