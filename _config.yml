@@ -46,6 +46,8 @@ minimal_mistakes_skin: "neon"
 
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
 
 markdown: kramdown
 kramdown:
